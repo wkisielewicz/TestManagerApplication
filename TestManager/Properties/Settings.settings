@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="testCounter" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="nunitEnvironmentVariable" Type="System.String" Scope="User">
+      <Value Profile="(Default)">..\..\..\packages\NUnit.ConsoleRunner.3.9.0\tools</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

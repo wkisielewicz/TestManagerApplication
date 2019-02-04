@@ -1,0 +1,40 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ViewModels="clr-namespace:TestManager.ViewModels" x:Class="TestManager.Views.SharedPageView">
+    <Grid>
+        <Grid.DataContext>
+            <ViewModels:SharedPageViewModel/>
+        </Grid.DataContext>
+        <TextBlock x:Name="TestConfiguration" HorizontalAlignment="Left" Margin="512,58,0,0" TextWrapping="Wrap"
+                   Text="TEST CONFIGURATION" VerticalAlignment="Top" Height="35" Width="188" FontSize="20"
+                   Foreground="#F3B562" FontFamily="Karbon Regular" FontWeight="Bold" />
+
+        <CheckBox x:Name="SingleTestCheckbox" Content="Run as a single test" HorizontalAlignment="Left" Margin="512,93,0,0" VerticalAlignment="Top"
+                  Height="23" Width="153" FontFamily="Karbon Light" FontSize="18" Foreground="White"
+                  BorderBrush="White" IsChecked="{Binding IsCheckedSingleTestCheckBox}" Command="{Binding RunAsAsingleTestCommand}"/>
+
+        <CheckBox x:Name="TestSequenceCheckBox" Content="Run as a test sequence" HorizontalAlignment="Left" Margin="512,121,0,0"
+                  VerticalAlignment="Top" Height="23" Width="180" FontFamily="Karbon Light" FontSize="18"
+                  Foreground="White" BorderBrush="White" IsChecked="{Binding IsCheckedTestSequenceCheckBox}"  Command="{Binding RunAsATestSequenceCommand}" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="780,94,0,0" TextWrapping="Wrap" Text="Set test counter"
+                   VerticalAlignment="Top" Width="120" Foreground="#FFE5E5E5" FontSize="18" FontFamily="Karbon Light" />
+
+        <TextBox x:Name="CounterBox" Text ="{Binding TestCounter}" IsEnabled="{Binding TextboxEnabled}" HorizontalAlignment="Left" Height="25" Margin="780,118,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="120" BorderBrush="White" />
+
+        <Button x:Name="Save" Style="{StaticResource SaveButtonStyle}" Content="Save" HorizontalAlignment="Left"
+                Margin="928,118,0,0" VerticalAlignment="Top" Width="84"
+                AutomationProperties.HelpText="Save" Height="25" Background="#FF68A0A4" BorderBrush="#FF68A0A4"
+                Foreground="White" FontFamily="Karbon Regular" FontWeight="Bold" FontSize="14" Command="{Binding SaveTestSequenceNumberCommand}"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="11,538,0,0" TextWrapping="Wrap" Text="Console output"
+                   VerticalAlignment="Top" Width="120" Foreground="#FFE5E5E5" FontSize="18" FontFamily="Karbon Light" />
+
+        <TextBox x:Name="ConsoleOutput" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="208"
+                 Margin="11,565,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="1001"
+                 Background="#FF24222A" Foreground="White" BorderBrush="#FF24222A" TextChanged="ScrollConsoleOutput"
+                 SelectionBrush="#FF24222A" />
+    </Grid>
+</UserControl>
